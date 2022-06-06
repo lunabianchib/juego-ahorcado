@@ -1,0 +1,470 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #fad7e4;
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.Logo{
+    text-align: left;
+    margin: 1.5em;
+}
+
+.contenedor-inicio{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.texto{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.titulo{
+    color: #e71f73;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 1em;
+}
+
+.botones-inicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-iniciar{
+    box-sizing: border-box;
+    background-color: #e71f73;
+    width: 13em;
+    height: 4em;    
+    border: 1.5px solid #682C0E;
+    border-radius: 1em;
+    font-family: 'Quicksand';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    color: #fad7e4;
+    margin: .5em;
+}
+
+.boton-addpalabra{
+    box-sizing: border-box;
+    background-color: #e71f73;
+    width: 13em;
+    height: 4em;    
+    border: 1.5px solid #682C0E;
+    border-radius: 1em;
+    font-family: 'Quicksand';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    color: #fad7e4;
+    margin: .5em;
+}
+
+.contenedor-addpalabra{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.entrada{
+    display: flex;
+    align-items: center;
+    padding-top: 12em;
+    padding-bottom: 1em;
+}
+
+.addpalabra{
+    background: #fad7e4;
+    resize: none;
+    border: none;
+    width: 20em;
+    height: 2em;
+    text-transform: uppercase;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #682C0E;
+}
+
+.addpalabra::placeholder{
+    text-transform: lowercase;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #682C0E;
+    padding-left: .3em;
+}
+
+.advertencia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2em;
+    gap: 1em;
+}
+
+.reglas{
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    color: #682C0E;
+    line-height: 150%;
+}
+
+.botones-addpalabra, .botones-juego{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1em;
+    gap: 1em;
+}
+
+.aviso-visible{
+    position: absolute;
+    margin-bottom: 1em;
+    background-color: #fad7e4;
+    border-radius: 2em;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    color:#C24914;
+    text-align: center;    
+    padding: .6em 3em;
+    transform: translateY(-150%);
+    transition:2.5s;
+    opacity:95%;
+}
+
+.aviso-invisible{
+    position: absolute;
+    margin-bottom: 1em;
+    background-color: #fad7e4;
+    border-radius: 2em;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    color:#C24914;
+    text-align: center; 
+    padding: .6em 3em;
+    transform: translateY(-250%);
+    transition:2s;
+    opacity: 0%;
+}
+
+.aviso-palabra-invisible{
+    position: absolute;
+    margin-bottom: 1em;
+    background-color: rgb(255, 217, 233);
+    border-radius: 2em;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    color: #682C0E;
+    text-align: center; 
+    padding: .6em 3em;
+    transform: translateY(-650%);
+    transition:2s;
+    opacity: 0%;
+}
+
+.aviso-palabra-visible{
+    position: absolute;
+    margin-bottom: 1em;
+    background-color: rgba(255, 217, 233);
+    border-radius: 2em;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    color: #682C0E;
+    text-align: center;    
+    padding: .6em 3em;
+    transform: translateY(-550%);
+    transition:2.5s;
+    opacity:95%;
+}
+
+.botonGuardarEmpezar, .botonNuevojuego{
+    box-sizing: border-box;
+    background-color: #e71f73;
+    width: 13em;
+    height: 3em;    
+    border: 1.5px solid #682C0E;
+    border-radius: 1em;
+    font-family: 'Quicksand';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    color: #fad7e4;
+    margin: .5em;
+}
+
+.botonCancelar, .botonDesistir{
+    box-sizing: border-box;
+    background-color: #e71f73;
+    width: 13em;
+    height: 3em;    
+    border: 1.5px solid #682C0E;
+    border-radius: 1em;
+    font-family: 'Quicksand';
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    color: #fad7e4;
+    margin: .5em;
+}
+
+.contenedor-canvas{
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.sec-canvas{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1em;
+}
+
+.ganaste{
+    position: absolute;
+    margin-top: 2em;
+    font-family: 'Quicksand';
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(248, 182, 220);
+}
+
+.perdiste{
+    position: absolute;
+    margin-top: 2em;
+    font-family: 'Quicksand';
+    font-size: 4em;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(231, 16, 16, 0.89)
+}
+
+.contenedor-letras{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    padding: 0.5em;
+}
+
+.guiones{
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 6px solid rgba(151, 51, 118, 0.945);
+    font-family: 'Quicksand';
+    font-size: 30px;
+    font-weight: bold;
+    color: #682C0E;
+}
+
+.letras-descartadas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    padding: 1em;
+}
+
+.descartadas{
+    margin-top: .5em;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration-line: line-through;
+    color: brown;
+}
+
+.palabrasecreta{
+    margin-top: .5em;
+    font-family: 'Quicksand';
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: rgba(153, 3, 153, 0.884);
+}
+
+.teclado{
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.fila1, .fila2, .fila3{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    padding: .6em;
+}
+
+.tecla{
+    box-sizing: border-box;
+    background-color: rgb(255, 230, 245);
+    width: 1.8em;
+    height: 1.8em;    
+    border: 1.5px solid #682C0E;
+    border-radius: .3em;
+    font-family: 'Quicksand';
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+    color: #682C0E;
+}
+
+.teclaP{
+    opacity: 60%;
+}
+
+footer{
+    background-color: #e71f73;
+    text-align: center;
+    padding: 1em;
+}
+
+.pie-pagina a{
+    color: #ffeff5;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pie-pagina a:hover{
+    color: #fdfdfd;
+    text-decoration: underline;
+}
+
+footer h1 {
+    color: #ffeff5;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+footer p {
+    color: #ffeff5;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width:760px){
+    .contenedor-inicio{
+        height: auto;
+    }
+
+    .texto{
+        padding: 0em;
+        padding-top: 5em;
+    }
+
+    .titulo{
+        font-size: 2.5em;
+    }
+
+    .contenedor-addpalabra{
+        grid-template-rows: auto auto auto;
+    }
+
+    .entrada{
+        padding-top: 10em;
+    }
+
+    .addpalabra{
+        width: 14em;
+        font-size: 24px;
+        margin-left: 1em;
+    }
+
+    .addpalabra::placeholder{
+        font-size: 24px;
+    }
+
+    .advertencia{
+        margin: 0em 1.5em 1em 1.5em;
+    }
+    
+    .botones-addpalabra, .botones-juego{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0em;
+        gap: 0em;
+    }
+
+    .boton-iniciar, .boton-addpalabra, .botonGuardarEmpezar, .botonNuevojuego, .botonCancelar, .botonDesistir{
+        width: 11em;
+        height: 3.5em;    
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .contenedor-letras{
+        gap: .5em;
+        margin: 0.2em;
+        padding: 0em;
+    }
+
+    .guiones{
+        width: 1em;
+        height: 1.5em;
+        font-size: 20px;
+    }    
+
+    .descartadas, .palabrasecreta{
+        font-size: 18px;
+    }
+
+    .sec-canvas{
+        padding: 0em;
+        margin-bottom: 0.5em;
+    }
+
+    .fila1, .fila2, .fila3{
+        gap: 0.3em;
+        padding: 0em;
+        margin-top: 0.3em;
+    }
+}
